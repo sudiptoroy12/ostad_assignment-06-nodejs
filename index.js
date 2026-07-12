@@ -1,4 +1,4 @@
-const { log } = require("console")
+
 const http = require("http")
 
 const server = http.createServer((req,res)=>{
@@ -8,8 +8,9 @@ const server = http.createServer((req,res)=>{
 
 })
 
-server.listen(5000, ()=>{
-    console.log("server started successfully on port 5000");
-    
+const PORT = 5000
+server.listen(PORT, ()=>{
+    console.log(`server started successfully on port ${PORT}`);
+
     
 })
