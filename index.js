@@ -1,5 +1,7 @@
 
 const http = require("http")
+const fs = require("fs")
+const path = require("path")
 
 
 const navbar = `
@@ -10,11 +12,16 @@ const navbar = `
             </nav>
             <hr>`
 
+            
+const newfolder = path.join(__dirname, "pages")
+
+if(!fs.existsSync(newfolder)) fs.mkdirSync(newfolder)
+
 const server = http.createServer((req,res)=>{
 
     if(req.url === "/" || req.url === "/home"){
-        res.writeHead(200, {"content-type" : "text/html"})
-        res.write(`
+
+         fs.writeFile(path.join(newfolder, "home.html") , `
             <html>
               <head><title>Home Page</title></head>
               <body>
@@ -23,8 +30,17 @@ const server = http.createServer((req,res)=>{
                     <p>This is the main landing page of our Node.js HTTP server.</p>
                 </body>
              
-            </html>`)
-        res.end()
+            </html>` , ()=>{
+            console.log("Home page created");
+            
+        })
+         fs.readFile(path.join(newfolder, "home.html"), "utf8" ,(err, data)=>{
+         res.writeHead(200, {"content-type" : "text/html"})
+          res.write(`${data}`)    
+          res.end()  
+        })
+
+        
       
     }
     else if(req.url === "/about"){
