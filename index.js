@@ -24,10 +24,20 @@ const server = http.createServer((req,res)=>{
          fs.writeFile(path.join(newfolder, "home.html") , `
             <html>
               <head><title>Home Page</title></head>
-              <body>
+                <body>
                    ${navbar}
-                    <h1>Welcome to the Home Page</h1>
-                    <p>This is the main landing page of our Node.js HTTP server.</p>
+                    <div style="max-width: 800px; margin: 50px auto; padding: 40px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center;">
+            
+                        <!-- Nodejs -->
+                        <div style="width: 200px; height: 200px; background: linear-gradient(45deg, #1a252f, #00d2d3); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 40px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                        Nodejs
+                        </div>
+
+                        <h1 style="color: #1a252f; font-size: 36px; margin-bottom: 10px;">Welcome to the Home Page</h1>
+                        <p style="color: #7f8c8d; font-size: 18px; max-width: 600px; margin: 0 auto 30px;">
+                          This is the main landing page of our awesome Node.js HTTP server.
+                        </p>
+                    </div>
                 </body>
              
             </html>` , ()=>{
