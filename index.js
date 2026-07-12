@@ -1,8 +1,6 @@
-
-const http = require("http")
-const fs = require("fs")
-const path = require("path")
-
+const http = require("http");
+const fs = require("fs");
+const path = require("path");
 
 const navbar = `
             <nav style="background-color: #1a252f; padding: 20px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
@@ -10,18 +8,17 @@ const navbar = `
             <a href="/about" style="color: #ffffff; text-decoration: none; font-weight: bold; margin: 0 15px; font-size: 18px; transition: 0.3s;">About</a> 
             <a href="/contact" style="color: #ffffff; text-decoration: none; font-weight: bold; margin: 0 15px; font-size: 18px; transition: 0.3s;">Contact</a>
            </nav>
-            <hr>`
+            <hr>`;
 
-            
-const newfolder = path.join(__dirname, "pages")
+const newfolder = path.join(__dirname, "pages");
 
-if(!fs.existsSync(newfolder)) fs.mkdirSync(newfolder)
+if (!fs.existsSync(newfolder)) fs.mkdirSync(newfolder);
 
-const server = http.createServer((req,res)=>{
-
-    if(req.url === "/" || req.url === "/home"){
-
-         fs.writeFile(path.join(newfolder, "home.html") , `
+const server = http.createServer((req, res) => {
+  if (req.url === "/" || req.url === "/home") {
+    fs.writeFile(
+      path.join(newfolder, "home.html"),
+      `
             <html>
               <head><title>Home Page</title></head>
                 <body>
@@ -38,21 +35,20 @@ const server = http.createServer((req,res)=>{
                     </div>
                 </body>
              
-            </html>` , ()=>{
-            console.log("Home page created");
-            
-        })
-         fs.readFile(path.join(newfolder, "home.html"), "utf8" ,(err, data)=>{
-         res.writeHead(200, {"content-type" : "text/html"})
-         res.write(`${data}`)    
-         res.end()  
-        })
-
-        
-      
-    }
-    else if(req.url === "/about"){
-        fs.writeFile(path.join(newfolder, "about.html"), `
+            </html>`,
+      () => {
+        console.log("Home page created");
+      },
+    );
+    fs.readFile(path.join(newfolder, "home.html"), "utf8", (err, data) => {
+      res.writeHead(200, { "content-type": "text/html" });
+      res.write(`${data}`);
+      res.end();
+    });
+  } else if (req.url === "/about") {
+    fs.writeFile(
+      path.join(newfolder, "about.html"),
+      `
             <html>
               <head><title>About Page</title></head>
               <body>
@@ -71,20 +67,20 @@ const server = http.createServer((req,res)=>{
                     
                 </body>
              
-            </html>` , ()=>{
-                console.log("About page created");
-                
-            } )
-        fs.readFile(path.join(newfolder, "about.html"), "utf8", (err,data)=>{
-            res.writeHead(200, {"content-type" : "text/html"})
-            res.write(`${data}`)
-            res.end() 
-        })
-       
-      
-    }
-    else if(req.url === "/contact"){
-           fs.writeFile(path.join(newfolder, "contact.html"), `
+            </html>`,
+      () => {
+        console.log("About page created");
+      },
+    );
+    fs.readFile(path.join(newfolder, "about.html"), "utf8", (err, data) => {
+      res.writeHead(200, { "content-type": "text/html" });
+      res.write(`${data}`);
+      res.end();
+    });
+  } else if (req.url === "/contact") {
+    fs.writeFile(
+      path.join(newfolder, "contact.html"),
+      `
             <html>
               <head><title>Contact Page</title></head>
               <body>
@@ -105,22 +101,20 @@ const server = http.createServer((req,res)=>{
                     
                 </body>
              
-            </html>` , ()=>{
-                console.log("Contact page created");
-                
-            } )
+            </html>`,
+      () => {
+        console.log("Contact page created");
+      },
+    );
 
-        fs.readFile(path.join(newfolder, "contact.html"), "utf8", (err,data)=>{
-            res.writeHead(200, {"content-type" : "text/html"})
-            res.write(`${data}`)
-            res.end() 
-        })
-      
-    }
-
-    else{
-        res.writeHead(404, {"content-type" : "text/html"})
-        res.write(`
+    fs.readFile(path.join(newfolder, "contact.html"), "utf8", (err, data) => {
+      res.writeHead(200, { "content-type": "text/html" });
+      res.write(`${data}`);
+      res.end();
+    });
+  } else {
+    res.writeHead(404, { "content-type": "text/html" });
+    res.write(`
             <html>
                 <head><title>404 - Not Found</title></head>
                 <body>
@@ -135,18 +129,12 @@ const server = http.createServer((req,res)=>{
                     </div>
                 </body>
             </html>
-            `)
-         res.end()   
-         
-    }
+            `);
+    res.end();
+  }
+});
 
-   
-
-})
-
-const PORT = 5000
-server.listen(PORT, ()=>{
-    console.log(`server started successfully on port ${PORT}`);
-
-    
-})
+const PORT = 5000;
+server.listen(PORT, () => {
+  console.log(`server started successfully on port ${PORT}`);
+});
