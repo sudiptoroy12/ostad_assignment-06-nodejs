@@ -36,16 +36,15 @@ const server = http.createServer((req,res)=>{
         })
          fs.readFile(path.join(newfolder, "home.html"), "utf8" ,(err, data)=>{
          res.writeHead(200, {"content-type" : "text/html"})
-          res.write(`${data}`)    
-          res.end()  
+         res.write(`${data}`)    
+         res.end()  
         })
 
         
       
     }
     else if(req.url === "/about"){
-        res.writeHead(200, {"content-type" : "text/html"})
-        res.write(`
+        fs.writeFile(path.join(newfolder, "about.html"), `
             <html>
               <head><title>About Page</title></head>
               <body>
@@ -55,13 +54,20 @@ const server = http.createServer((req,res)=>{
                     
                 </body>
              
-            </html>`)
-        res.end()
+            </html>` , ()=>{
+                console.log("About page created");
+                
+            } )
+        fs.readFile(path.join(newfolder, "about.html"), "utf8", (err,data)=>{
+            res.writeHead(200, {"content-type" : "text/html"})
+            res.write(`${data}`)
+            res.end() 
+        })
+       
       
     }
     else if(req.url === "/contact"){
-        res.writeHead(200, {"content-type" : "text/html"})
-        res.write(`
+           fs.writeFile(path.join(newfolder, "contact.html"), `
             <html>
               <head><title>Contact Page</title></head>
               <body>
@@ -74,8 +80,16 @@ const server = http.createServer((req,res)=>{
                     
                 </body>
              
-            </html>`)
-        res.end()
+            </html>` , ()=>{
+                console.log("Contact page created");
+                
+            } )
+
+        fs.readFile(path.join(newfolder, "contact.html"), "utf8", (err,data)=>{
+            res.writeHead(200, {"content-type" : "text/html"})
+            res.write(`${data}`)
+            res.end() 
+        })
       
     }
 
