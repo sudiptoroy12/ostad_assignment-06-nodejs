@@ -5,11 +5,11 @@ const path = require("path")
 
 
 const navbar = `
-            <nav>
-                <a href="/">Home</a> | 
-                <a href="/about">About</a> | 
-                <a href="/contact">Contact</a>
-            </nav>
+            <nav style="background-color: #1a252f; padding: 20px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+            <a href="/" style="color: #00d2d3; text-decoration: none; font-weight: bold; margin: 0 15px; font-size: 18px; transition: 0.3s;">Home</a> 
+            <a href="/about" style="color: #ffffff; text-decoration: none; font-weight: bold; margin: 0 15px; font-size: 18px; transition: 0.3s;">About</a> 
+            <a href="/contact" style="color: #ffffff; text-decoration: none; font-weight: bold; margin: 0 15px; font-size: 18px; transition: 0.3s;">Contact</a>
+           </nav>
             <hr>`
 
             
