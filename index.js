@@ -59,8 +59,19 @@ const server = http.createServer((req,res)=>{
               <head><title>About Page</title></head>
               <body>
                    ${navbar}
-                    <h1>About Us</h1>
-                    <p>Learn more about our journey, vision, and the team behind this application.</p>
+                   
+                     <div style="max-width: 800px; margin: 50px auto; padding: 40px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center;">
+            
+                        <!-- Nodejs -->
+                        <div style="width: 200px; height: 200px; background: linear-gradient(45deg, #1a252f, #00d2d3); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 40px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                        About Us
+                        </div>
+
+                        <h1 style="color: #1a252f; font-size: 36px; margin-bottom: 10px;">Welcome to the About Page</h1>
+                        <p style="color: #7f8c8d; font-size: 18px; max-width: 600px; margin: 0 auto 30px;">
+                          Learn more about our journey, vision, and the team behind this application.
+                        </p>
+                    </div>
                     
                 </body>
              
@@ -81,12 +92,22 @@ const server = http.createServer((req,res)=>{
             <html>
               <head><title>Contact Page</title></head>
               <body>
-                   ${navbar}
-                    <h1>Contact Page</h1>
-                    <p>Feel free to reach out to us via email or our social media handles.</p>
-                    <h2>Name : Sudipto Roy</h2>
-                    <p>Contact No : 01794197740 </p>
-                    <p>Email : sudipto1294@gmail.com </p>
+                   ${navbar}                
+                    <div style="max-width: 800px; margin: 50px auto; padding: 40px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center;">
+            
+                        <!-- Nodejs -->
+                        <div style="width: 200px; height: 200px; background: linear-gradient(45deg, #1a252f, #00d2d3); border-radius: 50%; margin: 0 auto 20px; padding:12px 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 40px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                        Contact Us
+                        </div>
+
+                        <h1 style="color: #1a252f; font-size: 36px; margin-bottom: 10px;">Welcome to the Contact Page</h1>
+                        <p style="color: #7f8c8d; font-size: 18px; max-width: 600px; margin: 0 auto 30px;">
+                          Feel free to reach out to us via email or our social media handles or phone number that i given.
+                        </p>
+                        <h2 style="color: #00786e; font-size: 18px; margin-bottom: 10px;">Name : Sudipto Roy</h2>
+                        <p style="color: #4f6f71; font-size: 18px; margin-bottom: 10px;">Contact No : 01794197740 </p>
+                        <p  style="color: #4f6f71; font-size: 18px; margin-bottom: 10px;">Email : sudipto1294@gmail.com </p>
+                    </div>
                     
                 </body>
              
@@ -109,10 +130,15 @@ const server = http.createServer((req,res)=>{
             <html>
                 <head><title>404 - Not Found</title></head>
                 <body>
-                    ${navbar}
-                    
-                    <h1 style="color: red;">404 - Page Not Found</h1>
-                    <p>Oops! The page you are looking for does not exist.</p>
+                    ${navbar}     
+                     <div style="max-width: 800px; margin: 50px auto; padding: 40px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center;">
+            
+
+                        <h1 style="color: red; font-size: 36px; margin-bottom: 10px;">404 - Page Not Found</h1>
+                        <p style="color: #7f8c8d; font-size: 18px; max-width: 600px; margin: 0 auto 30px;">
+                          Oops! The page you are looking for does not exist.
+                        </p>
+                    </div>
                 </body>
             </html>
             `)
