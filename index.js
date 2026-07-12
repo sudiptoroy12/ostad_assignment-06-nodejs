@@ -27,8 +27,6 @@ const server = http.createServer((req,res)=>{
                 <body>
                    ${navbar}
                     <div style="max-width: 800px; margin: 50px auto; padding: 40px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center;">
-            
-                        <!-- Nodejs -->
                         <div style="width: 200px; height: 200px; background: linear-gradient(45deg, #1a252f, #00d2d3); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 40px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
                         Nodejs
                         </div>
@@ -61,8 +59,6 @@ const server = http.createServer((req,res)=>{
                    ${navbar}
                    
                      <div style="max-width: 800px; margin: 50px auto; padding: 40px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center;">
-            
-                        <!-- Nodejs -->
                         <div style="width: 200px; height: 200px; background: linear-gradient(45deg, #1a252f, #00d2d3); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 40px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
                         About Us
                         </div>
@@ -94,8 +90,6 @@ const server = http.createServer((req,res)=>{
               <body>
                    ${navbar}                
                     <div style="max-width: 800px; margin: 50px auto; padding: 40px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center;">
-            
-                        <!-- Nodejs -->
                         <div style="width: 200px; height: 200px; background: linear-gradient(45deg, #1a252f, #00d2d3); border-radius: 50%; margin: 0 auto 20px; padding:12px 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 40px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
                         Contact Us
                         </div>
