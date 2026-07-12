@@ -44,10 +44,51 @@ const server = http.createServer((req,res)=>{
         res.end()
       
     }
+    else if(req.url === "/contact"){
+        res.writeHead(200, {"content-type" : "text/html"})
+        res.write(`
+            <html>
+              <head><title>Contact Page</title></head>
+              <body>
+                   <nav>
+                       <a href="/">Home</a> | 
+                       <a href="/about">About</a> | 
+                       <a href="/contact">Contact</a>
+                    </nav>
+                    <hr>
+                    <h1>Contact Page</h1>
+                    <p>Feel free to reach out to us via email or our social media handles.</p>
+                    <h2>Name : Sudipto Roy</h2>
+                    <p>Contact No : 01794197740 </p>
+                    <p>Email : sudipto1294@gmail.com </p>
+                    
+                </body>
+             
+            </html>`)
+        res.end()
+      
+    }
 
     else{
-         res.write("server start")
-         res.end()
+        res.writeHead(404, {"content-type" : "text/html"})
+        res.write(`
+            <html>
+                <head><title>404 - Not Found</title></head>
+                <body>
+                    <nav>
+                       <a href="/">Home</a> | 
+                       <a href="/about">About</a> | 
+                       <a href="/contact">Contact</a>
+                    </nav>
+                    <hr>
+                    
+                    <h1 style="color: red;">404 - Page Not Found</h1>
+                    <p>Oops! The page you are looking for does not exist.</p>
+                </body>
+            </html>
+            `)
+         res.end()   
+         
     }
 
    
