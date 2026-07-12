@@ -1,6 +1,15 @@
 
 const http = require("http")
 
+
+const navbar = `
+            <nav>
+                <a href="/">Home</a> | 
+                <a href="/about">About</a> | 
+                <a href="/contact">Contact</a>
+            </nav>
+            <hr>`
+
 const server = http.createServer((req,res)=>{
 
     if(req.url === "/" || req.url === "/home"){
@@ -9,12 +18,7 @@ const server = http.createServer((req,res)=>{
             <html>
               <head><title>Home Page</title></head>
               <body>
-                   <nav>
-                       <a href="/">Home</a> | 
-                       <a href="/about">About</a> | 
-                       <a href="/contact">Contact</a>
-                    </nav>
-                    <hr>
+                   ${navbar}
                     <h1>Welcome to the Home Page</h1>
                     <p>This is the main landing page of our Node.js HTTP server.</p>
                 </body>
@@ -29,12 +33,7 @@ const server = http.createServer((req,res)=>{
             <html>
               <head><title>About Page</title></head>
               <body>
-                   <nav>
-                       <a href="/">Home</a> | 
-                       <a href="/about">About</a> | 
-                       <a href="/contact">Contact</a>
-                    </nav>
-                    <hr>
+                   ${navbar}
                     <h1>About Us</h1>
                     <p>Learn more about our journey, vision, and the team behind this application.</p>
                     
@@ -50,12 +49,7 @@ const server = http.createServer((req,res)=>{
             <html>
               <head><title>Contact Page</title></head>
               <body>
-                   <nav>
-                       <a href="/">Home</a> | 
-                       <a href="/about">About</a> | 
-                       <a href="/contact">Contact</a>
-                    </nav>
-                    <hr>
+                   ${navbar}
                     <h1>Contact Page</h1>
                     <p>Feel free to reach out to us via email or our social media handles.</p>
                     <h2>Name : Sudipto Roy</h2>
@@ -75,12 +69,7 @@ const server = http.createServer((req,res)=>{
             <html>
                 <head><title>404 - Not Found</title></head>
                 <body>
-                    <nav>
-                       <a href="/">Home</a> | 
-                       <a href="/about">About</a> | 
-                       <a href="/contact">Contact</a>
-                    </nav>
-                    <hr>
+                    ${navbar}
                     
                     <h1 style="color: red;">404 - Page Not Found</h1>
                     <p>Oops! The page you are looking for does not exist.</p>
